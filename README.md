@@ -6,3 +6,6 @@ To compile SASS, use `sass-cli` with the following command:
 sass --watch application.scss:application.css
 ```
 
+## Preview 
+
+![](./layout-screenshot.png)
