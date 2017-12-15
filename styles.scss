@@ -1,36 +1,60 @@
-$blue: #42AEEF;
+$blue: #00ADEE;
 $green: #BED23C;
 $grey: #C4C4C4;
 $white: #FFF;
 
 .navbar {
   align-items: center;
-  background-color: $blue;
+  background-color: $white;
   box-shadow: 0 5px 10px $grey;
   display: flex;
-  height: 50px;
+  height: 90px;
+  justify-content: space-between;
   padding: 0 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
+
+  .logo {
+    width: 200px;
+  }
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin: 150px auto 0;
+  max-width: 1050px;
+  width: 100%;
 }
 
 .platform {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 50px 0;
+  position: relative;
+
+  &::before {
+    background: url('./assets/triangle.svg') no-repeat;
+    content: '';
+    height: 90px;
+    position: absolute;
+    top: -40px;
+    left: -50px;
+    width: 100px;
+    z-index: -1;
+  }
 }
 
-.description {
-  font-size: 14px;
-  line-height: 19px;
+.title {
+  font-size: 21px;
+}
+
+.platform-title {
+  @extend .title;
+  align-self: flex-start;
 }
 
 .tools {
@@ -41,24 +65,25 @@ $white: #FFF;
   width: 100%;
 }
 
-.title {
-  font-size: 21px;
-  font-weight: bold;
-}
-
 .logo {
   height: 100px;
   margin: 10px 0;
   width: 100px;
 }
 
+.description {
+  font-size: 14px;
+  line-height: 19px;
+}
+
 .tech {
+  align-items: center;
   border: 1px solid $green;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   margin: 15px;
-  max-width: 180px;
+  max-width: 220px;
   padding: 10px;
   position: relative;
   text-align: center;
@@ -70,9 +95,10 @@ $white: #FFF;
 
   &::after {
     background-color: $green;
-    border-radius: 10px;
+    border-radius: 5px;
     content: '';
     height: 100%;
+    left: 10px;
     position: absolute;
     width: 100%;
     z-index: -1;
@@ -80,7 +106,7 @@ $white: #FFF;
 
   &:hover {
     &::after {
-      right: 0;
+      left: 0;
       top: 0;
     }
   }
@@ -88,7 +114,7 @@ $white: #FFF;
 
 .release {
   font-weight: bold;
-  margin: 5px 0;
+  margin: 15px 0;
 }
 
 .footer {
@@ -96,8 +122,51 @@ $white: #FFF;
   background-color: $blue;
   color: $white;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30vh;
+}
+
+.contact-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
   justify-content: center;
-  height: 20vh;
+  width: 100%;
+}
+
+.label {
+  color: $white;
+  font-size: 24px;
+  margin: 20px;
+}
+
+.input-email {
+  border-radius: 8px;
+  height: 30px;
+  margin-bottom: 20px;
+  max-width: 300px;
+  padding-left: 12px;
+  width: 100%;
+}
+
+.send {
+  border-radius: 8px;
+  border: 1px solid $white;
+  color: $white;
+  padding: 15px 30px;
+}
+
+.copyright {
+  background: $grey;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.copyright-text {
+  font-size: 12px;
 }
 
 .white {
