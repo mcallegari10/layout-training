@@ -1,14 +1,12 @@
-$blue: #00ADEE;
-$green: #BED23C;
-$grey: #C4C4C4;
-$white: #FFF;
+@import 'variables/colors';
+@import 'variables/sizes';
 
 .navbar {
   align-items: center;
   background-color: $white;
   box-shadow: 0 5px 10px $grey;
   display: flex;
-  height: 90px;
+  height: $nav-height;
   justify-content: space-between;
   padding: 0 20px;
   position: fixed;
@@ -74,6 +72,7 @@ $white: #FFF;
 .description {
   font-size: 14px;
   line-height: 19px;
+  padding: 10px;
 }
 
 .tech {
@@ -131,7 +130,7 @@ $white: #FFF;
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 2vh;
   justify-content: center;
   width: 100%;
 }
@@ -171,4 +170,12 @@ $white: #FFF;
 
 .white {
   color: $white;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    .title {
+      display: none;
+    }
+  }
 }
