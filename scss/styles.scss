@@ -167,4 +167,20 @@
       display: none;
     }
   }
+
+  .tools {
+    grid-template-columns: max-content;
+  }
+
+  .platform::before {
+    left: 50px;
+  }
+  .platform-title {
+    align-self: center;
+  }
+
+  .tech:not(:last-child) {
+    border-right: none;
+    border-bottom: 2px solid $green;
+  }
 }
