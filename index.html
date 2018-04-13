@@ -7,15 +7,18 @@
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="application.css">
   <title>Maquetado</title>
+  <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-  <nav class="navbar">
+  <nav id="app" class="navbar">
     <img src="./assets/wolox_logo.svg" alt="wolox" class="logo" />
+    <button @click="scrollTo('front')">Front-End</button>
+    <button @click="scrollTo('back')">Back-End</button>
     <h1 class="title">Developer Tools</h1>
   </nav>
   <div class="main-container">
     <div class="platform">
-      <h1 class="platform-title">Front-End Tools</h1>
+      <h1 id="front" class="platform-title">Front-End Tools</h1>
       <div class="tools">
         <div class="tech">
           <img src="./assets/react_icon.svg" alt="react" class="logo" />
@@ -60,7 +63,7 @@
       </div>
     </div>
     <div class="platform">
-      <h1 class="platform-title">Back-End Tools</h1>
+      <h1 id="back" class="platform-title">Back-End Tools</h1>
       <div class="tools">
         <div class="tech">
             <img src="./assets/rails_icon.png" alt="rails" class="logo" />
@@ -109,5 +112,6 @@
       </p>
     </div>
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
