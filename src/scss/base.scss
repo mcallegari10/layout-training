@@ -1,6 +1,3 @@
-@import 'variables/colors';
-@import 'variables/sizes';
-
 .navbar {
   align-items: center;
   background-color: $white;
@@ -38,9 +35,9 @@
     background: url('./assets/triangle.svg') no-repeat;
     content: '';
     height: $triangle-heigth;
+    left: -50px;
     position: absolute;
     top: -40px;
-    left: -50px;
     width: $triangle-width;
     z-index: -1;
   }
@@ -122,16 +119,16 @@
   color: $white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: $footer-height;
+  justify-content: space-between;
 }
 
 .contact-form {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 2vh;
   justify-content: center;
+  margin-top: 2vh;
   width: 100%;
 }
 
@@ -151,8 +148,8 @@
 }
 
 .send {
-  border-radius: 8px;
   border: 1px solid $white;
+  border-radius: 8px;
   color: $white;
   padding: 15px 30px;
 }
