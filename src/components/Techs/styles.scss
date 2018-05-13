@@ -1,0 +1,79 @@
+@import 'variables/colors';
+@import 'variables/sizes';
+
+.platform {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0;
+  position: relative;
+
+  &::before {
+    background: url('../../assets/triangle.svg') no-repeat;
+    content: '';
+    height: $triangle-heigth;
+    left: -50px;
+    position: absolute;
+    top: -40px;
+    width: $triangle-width;
+    z-index: -1;
+  }
+}
+
+.title {
+  font-size: $font-big;
+}
+
+.platform-title {
+  @extend .title;
+  align-self: flex-start;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: center;
+  margin: 50px 0;
+  width: 100%;
+}
+
+.tech {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  max-width: 220px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  .title {
+    font-size: $font-medium;
+  }
+
+  &:first-child {
+    border-radius: 0;
+    border-right: 2px solid $green;
+    grid-row: 1 / 3;
+    justify-content: center;
+  }
+}
+
+.logo {
+  height: $tech-logo-size;
+  margin: 10px 0;
+  width: $tech-logo-size;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 19px;
+  padding: 10px;
+}
+
+.release {
+  font-weight: bold;
+  margin: 15px 0;
+}

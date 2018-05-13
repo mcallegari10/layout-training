@@ -13,86 +13,10 @@ html(lang='en')
         h1.title
           | Developer Tools
       .main-container
-        .platform
-          h1.platform-title
-            | Front-End Tools
-          .tools
-            .tech
-              img.logo(src='./assets/react_icon.svg' alt='react')
-              h1.title
-                | ReactJS
-              span.release
-                | Release: 2013
-              p.description
-                | React is a declarative, component-based JavaScript library for building user interfaces.
-            .tech
-              img.logo(src='./assets/angular_icon.svg' alt='angular')
-              h1.title
-                | AngularJS
-              span.release
-                | Release: 2010
-              p.description
-                | AngularJS (commonly referred to as AngularJS 1.X) is a JavaScript framework for building SPAs with an MVC architechture.
-            .tech
-              img.logo(src='./assets/vue_icon.svg' alt='vue')
-              h1.title
-                | VueJS
-              span.release
-                | Release: 2014
-              p.description
-                | VueJS (pronounced /vjuː/, like view) is an open-source progressive JavaScript framework for building user interfaces.
-            .tech
-              img.logo(src='./assets/elm_icon.svg' alt='elm')
-              h1.title
-                | Elm
-              span.release
-                | Release: 2016
-              p.description
-                | Elm is a domain-specific functional programming language for declaratively creating web browser-based graphical user interfaces.
-            .tech
-              img.logo(src='./assets/polymer_icon.svg' alt='polymer')
-              h1.title
-                | Polymer
-              span.release
-                | Release: 2015
-              p.description
-                | Polymer is an open-source JavaScript library for building web applications using Web Components.
-        .platform
-          h1.platform-title
-            | Back-End Tools
-          .tools
-            .tech
-              img.logo(src='./assets/rails_icon.png' alt='rails')
-              h1.title
-                | Ruby on Rails
-              span.release
-                | Release: 2005
-              p.description
-                | Ruby on Rails, or Rails, is a server-side web application framework written in Ruby. Rails is an MVC framework, providing default structures for a database, a web service, and web pages.
-            .tech
-              img.logo(src='./assets/express_icon.svg' alt='express')
-              h1.title
-                | NodeJS
-              span.release
-                | Release: 2009
-              p.description
-                | Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
-            .tech
-              img.logo(src='./assets/aspnet_icon.png' alt='aspnet')
-              h1.title
-                | ASP.NET Core
-              span.release
-                | Release: 2016
-              p.description
-                | ASP.NET Core is the next generation of ASP.NET. It is a modular framework that runs on both the full .NET Framework, on Windows, and the cross-platform .NET Core.
-            .tech
-              img.logo(src='./assets/django_icon.svg' alt='django')
-              h1.title
-                | Django
-              span.release
-                | Release: 2005
-              p.description
-                | Django (/ˈdʒæŋɡoʊ/ JANG-goh) is a free and open-source web framework, written in Python, which follows the model-view-template (MVT) architectural pattern.
+        form.filter-container(@submit.prevent='filterTechs()')
+          input.filter(type='text' placeholder='Filtrar' v-model='filterValue')
+          button(type='submit')
+        techs(v-for='platform in platforms' :key='platform.platform' :platform='platform')
       .footer
         form.contact-form
           label.label
